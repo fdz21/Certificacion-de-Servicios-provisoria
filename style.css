@@ -1,0 +1,27 @@
+.main{
+    width: 80%;
+    margin: 50px auto;
+}
+.main__h1{
+    text-align: center;
+    margin-right: 500px;
+}
+
+/* Tabla */
+
+.main__tabla{
+    background-color: blanchedalmond;
+    border: 1px solid gray;
+}
+
+.main__tabla__col{
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Formulario */
+
+.main__form{
+    margin-top: 100px;
+}
