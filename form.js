@@ -34,7 +34,7 @@ function enviarDatos() {
       trFila.appendChild(tdAñoBaja);
     }
   }
-
+  
   let form = document.querySelector("form");
   let cargo = form.cargo.value;
   let hora = form.hora.value;
