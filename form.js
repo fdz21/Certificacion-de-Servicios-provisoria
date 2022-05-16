@@ -10,16 +10,19 @@ function continuidad() {
   let mesBaja = document.querySelector("#mesBaja");
   let añoBaja = document.querySelector("#añoBaja");
   let divBaja = document.querySelector("#baja");
+  let h3Baja = document.querySelector("#h3");
   if (diaBaja.disabled && mesBaja.disabled && añoBaja.disabled) {
     diaBaja.disabled = false;
     mesBaja.disabled = false;
     añoBaja.disabled = false;
     divBaja.classList.remove("div--baja");
+    h3Baja.classList.remove("div--baja");
   } else {
     diaBaja.disabled = true;
     mesBaja.disabled = true;
     añoBaja.disabled = true;
     divBaja.classList.add("div--baja");
+    h3Baja.classList.add("div--baja");
   }
 }
 

@@ -39,77 +39,82 @@
       </tbody>
     </table>
     <form class="main__form" action="">
-      <label for="cargo">
+      <label for="cargo" class="main__form__label">
         Cargo o Asignatura
-        <input type="text" name="cargo" id="cargo"  />
+        <input type="text" name="cargo" id="cargo" class="main__input" placeholder="Ej: Profesor Matematica" />
       </label>
-      <label for="hora">
-        Horas
-        <input type="text" name="hora" id="hora"  />
-      </label>
-      <label for="titularidad">
-        Titular o Suplente
-        <select name="titularidad" id="titularidad">
-          <option value="Titular">Titular</option>
-          <option value="Suplente">Suplente</option>
-        </select>
-      </label>
-      <label for="resolucion">
-        Curso
-        <select name="resolucion" id="resolucion">
-          <option value=""></option>
-          <option value="1A">1° A</option>
-          <option value="1B">1° B</option>
-          <option value="2A">2° A</option>
-          <option value="2B">2° B</option>
-          <option value="3A">3° A</option>
-          <option value="3B">3° B</option>
-          <option value="4A">4° A</option>
-          <option value="4B">4° B</option>
-          <option value="5A">5° A</option>
-          <option value="5B">5° B</option>
-          <option value="6A">6° A</option>
-          <option value="6B">6° B</option>
-        </select>
-        <!-- <input type="text" name="resolucion" id="resolucion" required /> -->
-      </label>
-      <label for="observacion">
-        Observaciones
-        <input type="text" name="observacion" id="observacion"  />
-      </label>
-      <h3 class="input__h3">Fecha de Alta</h3>
-      <label for="diaAlta">
-        Dia
-        <input type="text" name="diaAlta" id="diaAlta" />
-      </label>
-      <label for="mesAlta">
-        Mes
-        <input type="text" name="mesAlta" id="mesAlta"  />
-      </label>
-      <label for="añoAlta">
-        Año
-        <input type="text" name="añoAlta" id="añoAlta" />
-      </label>
-      <h3 class="input__h3">Fecha de Baja</h3>
-      <label for="continua">
-        Continua
-        <input type="checkbox" name="continua" id="continua" />
-      </label>
-      <div id="baja">
-        <label for="diaBaja">
-          Dia
-          <input type="text" name="dia2" id="diaBaja"  />
+      <div class="label--flex">
+        <label for="hora">
+          Horas
+          <input type="text" name="hora" id="hora" class="main__input" placeholder="XX"/>
         </label>
-        <label for="mesBaja">
-          Mes
-          <input type="text" name="mes2" id="mesBaja"  />
+        <label for="titularidad">
+          Titular o Suplente
+          <select name="titularidad" id="titularidad">
+            <option value="Titular">Titular</option>
+            <option value="Suplente">Suplente</option>
+          </select>
         </label>
-        <label for="añoBaja">
-          Año
-          <input type="text" name="año2" id="añoBaja"  />
+        <label for="resolucion">
+          Curso
+          <select name="resolucion" id="resolucion">
+            <option value=""></option>
+            <option value="1A">1° A</option>
+            <option value="1B">1° B</option>
+            <option value="2A">2° A</option>
+            <option value="2B">2° B</option>
+            <option value="3A">3° A</option>
+            <option value="3B">3° B</option>
+            <option value="4A">4° A</option>
+            <option value="4B">4° B</option>
+            <option value="5A">5° A</option>
+            <option value="5B">5° B</option>
+            <option value="6A">6° A</option>
+            <option value="6B">6° B</option>
+          </select>
         </label>
       </div>
-      <input id="button" type="submit"></button>
+      <label for="observacion" class="main__form__label">
+        Observaciones
+        <input type="text" name="observacion" id="observacion" class="main__input" />
+      </label>
+        <h3 class="input__h3">Fecha de Alta</h3>
+        <div class="label--flex">
+        <label for="diaAlta">
+          Dia
+          <input type="text" name="diaAlta" id="diaAlta" class="main__input" placeholder="DD"/>
+        </label>
+        <label for="mesAlta">
+          Mes
+          <input type="text" name="mesAlta" id="mesAlta" class="main__input" placeholder="MM"/>
+        </label>
+        <label for="añoAlta">
+          Año
+          <input type="text" name="añoAlta" id="añoAlta" class="main__input" placeholder="AAAA" />
+        </label>
+      </div>        
+      <label for="continua" class="label--checkbox">
+          Marcar si continua
+          <input type="checkbox" name="continua" id="continua" class="main__input--checkbox" />
+        </label>
+        <h3 id="h3" class="input__h3">Fecha de Baja</h3>
+      <div class="label--flex">
+        <div id="baja"  class="div--baja--visible">
+          <label for="diaBaja">
+            Dia
+            <input type="text" name="dia2" id="diaBaja" class="main__input" placeholder="DD" />
+          </label>
+          <label for="mesBaja">
+            Mes
+            <input type="text" name="mes2" id="mesBaja" class="main__input" placeholder="MM" />
+          </label>
+          <label for="añoBaja">
+            Año
+            <input type="text" name="año2" id="añoBaja" class="main__input" placeholder="AAAA"/>
+          </label>
+        </div>
+      </div>
+      <input id="button" type="submit" class="main__input--button"></button>
     </form>
   </div>
 </body>
