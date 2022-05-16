@@ -28,7 +28,13 @@ function enviarDatos() {
     if (diaBaja == "" && mesBaja == "" && añoBaja == "") {
       tdContinua.colSpan = 3;
       trFila.appendChild(tdContinua);
+      tdDiaTotal.textContent = calcularDiasHoy(fechaAlta);
+      tdMesTotal.textContent = calcularMesesHoy(fechaAlta);
+      tdAñoTotal.textContent = calcularYearsHoy(fechaAlta);
     } else {
+      tdDiaTotal.textContent = calcularDias(fechaAlta, fechaBaja);
+      tdMesTotal.textContent = calcularMeses(fechaAlta, fechaBaja);
+      tdAñoTotal.textContent = calcularYears(fechaAlta, fechaBaja);
       trFila.appendChild(tdDiaBaja);
       trFila.appendChild(tdMesBaja);
       trFila.appendChild(tdAñoBaja);
@@ -80,9 +86,6 @@ function enviarDatos() {
   tdDiaBaja.textContent = diaBaja;
   tdMesBaja.textContent = mesBaja;
   tdAñoBaja.textContent = añoBaja;
-  tdDiaTotal.textContent = calcularDias(fechaAlta);
-  tdMesTotal.textContent = calcularMeses(fechaAlta, fechaBaja);
-  tdAñoTotal.textContent = calcularYears(fechaAlta, fechaBaja);
   tdObservacion.textContent = rellenarObservacion(observacion);
 
   codigoCargos(tdCargo);
