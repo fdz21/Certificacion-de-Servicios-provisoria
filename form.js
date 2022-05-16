@@ -7,6 +7,17 @@ function prevenirDefault(event) {
 
   
 function enviarDatos() {
+  function celdaContinua(diaBaja, mesBaja, añoBaja){
+  if (diaBaja == "" && mesBaja == "" && añoBaja == ""){
+    trFila.appendChild(tdContinua);
+  }
+  else{
+    trFila.appendChild(tdDiaBaja);
+    trFila.appendChild(tdMesBaja);
+    trFila.appendChild(tdAñoBaja);
+  }
+}
+
   let form = document.querySelector("form");
   let cargo = form.cargo.value;
   let hora = form.hora.value;
@@ -51,6 +62,7 @@ function enviarDatos() {
   tdDiaAlta.textContent = diaAlta;
   tdMesAlta.textContent = mesAlta;
   tdAñoAlta.textContent = añoAlta;
+  tdContinua.textContent = "CONTINUA";
   tdDiaBaja.textContent = diaBaja;
   tdMesBaja.textContent = mesBaja;
   tdAñoBaja.textContent = añoBaja;
@@ -58,7 +70,6 @@ function enviarDatos() {
   tdMesTotal.textContent = calcularMeses(fechaAlta, fechaBaja);
   tdAñoTotal.textContent = calcularYears(fechaAlta, fechaBaja);
   tdObservacion.textContent = rellenarObservacion(observacion);
-
   
   codigoCargos(tdCargo);
   resolucionCargo(tdCargo);
@@ -70,9 +81,9 @@ function enviarDatos() {
   trFila.appendChild(tdDiaAlta);
   trFila.appendChild(tdMesAlta);
   trFila.appendChild(tdAñoAlta);
-  trFila.appendChild(tdDiaBaja);
-  trFila.appendChild(tdMesBaja);
-  trFila.appendChild(tdAñoBaja);
+
+  celdaContinua(diaBaja, mesBaja, añoBaja);
+ 
   trFila.appendChild(tdAñoTotal);
   trFila.appendChild(tdMesTotal);
   trFila.appendChild(tdDiaTotal);
@@ -81,20 +92,25 @@ function enviarDatos() {
 }
 
 // Eventos
-const continua = document.querySelector("#continua");
-continua.addEventListener("click", continuidad);
 const button = document.querySelector("#button");
 button.addEventListener("click", prevenirDefault);
 button.addEventListener("click", enviarDatos);
-
-
+const continua = document.querySelector("#continua");
+continua.addEventListener("click", continuidad);
 
 function continuidad(){
-
-  let diaBaja = document.querySelector("#diaBaja");
-  let mesBaja = document.querySelector("#mesBaja");
-  let añoBaja = document.querySelector("#añoBaja");
-  diaBaja.disabled = true;
-  mesBaja.disabled = true;
-  añoBaja.disabled = true;
+    let diaBaja = document.querySelector("#diaBaja");
+    let mesBaja = document.querySelector("#mesBaja");
+    let añoBaja = document.querySelector("#añoBaja");
+  if (diaBaja.disabled && mesBaja.disabled && añoBaja.disabled) {
+    diaBaja.disabled = false;
+    mesBaja.disabled = false;
+    añoBaja.disabled = false;
+  }
+  else{
+    diaBaja.disabled = true;
+    mesBaja.disabled = true;
+    añoBaja.disabled = true;
+  }
 }
+
