@@ -25,3 +25,7 @@
 .main__form{
     margin-top: 100px;
 }
+
+.div--baja{
+    display: none;
+}

@@ -5,18 +5,35 @@ function prevenirDefault(event) {
   event.preventDefault();
 }
 
-  
-function enviarDatos() {
-  function celdaContinua(diaBaja, mesBaja, añoBaja){
-  if (diaBaja == "" && mesBaja == "" && añoBaja == ""){
-    trFila.appendChild(tdContinua);
-  }
-  else{
-    trFila.appendChild(tdDiaBaja);
-    trFila.appendChild(tdMesBaja);
-    trFila.appendChild(tdAñoBaja);
+function continuidad() {
+  let diaBaja = document.querySelector("#diaBaja");
+  let mesBaja = document.querySelector("#mesBaja");
+  let añoBaja = document.querySelector("#añoBaja");
+  let divBaja = document.querySelector("#baja");
+  if (diaBaja.disabled && mesBaja.disabled && añoBaja.disabled) {
+    diaBaja.disabled = false;
+    mesBaja.disabled = false;
+    añoBaja.disabled = false;
+    divBaja.classList.remove("div--baja");
+  } else {
+    diaBaja.disabled = true;
+    mesBaja.disabled = true;
+    añoBaja.disabled = true;
+    divBaja.classList.add("div--baja");
   }
 }
+
+function enviarDatos() {
+  function celdaContinua(diaBaja, mesBaja, añoBaja) {
+    if (diaBaja == "" && mesBaja == "" && añoBaja == "") {
+      tdContinua.colSpan = 3;
+      trFila.appendChild(tdContinua);
+    } else {
+      trFila.appendChild(tdDiaBaja);
+      trFila.appendChild(tdMesBaja);
+      trFila.appendChild(tdAñoBaja);
+    }
+  }
 
   let form = document.querySelector("form");
   let cargo = form.cargo.value;
@@ -30,9 +47,6 @@ function enviarDatos() {
   let diaBaja = form.diaBaja.value;
   let mesBaja = form.mesBaja.value;
   let añoBaja = form.añoBaja.value;
-
-
-  
 
   let fechaAlta = añoAlta + "/" + mesAlta + "/" + diaAlta;
   let fechaBaja = añoBaja + "/" + mesBaja + "/" + diaBaja;
@@ -53,8 +67,8 @@ function enviarDatos() {
   let tdMesTotal = document.createElement("td");
   let tdAñoTotal = document.createElement("td");
   let tdObservacion = document.createElement("td");
-  let tabla = document.querySelector("#tabla"); 
-  
+  let tabla = document.querySelector("#tabla");
+
   tdCargo.textContent = cargo;
   tdHora.textContent = hora;
   tdTitularidad.textContent = titularidad;
@@ -70,10 +84,10 @@ function enviarDatos() {
   tdMesTotal.textContent = calcularMeses(fechaAlta, fechaBaja);
   tdAñoTotal.textContent = calcularYears(fechaAlta, fechaBaja);
   tdObservacion.textContent = rellenarObservacion(observacion);
-  
+
   codigoCargos(tdCargo);
   resolucionCargo(tdCargo);
- 
+
   trFila.appendChild(tdCargo);
   trFila.appendChild(tdHora);
   trFila.appendChild(tdTitularidad);
@@ -83,7 +97,7 @@ function enviarDatos() {
   trFila.appendChild(tdAñoAlta);
 
   celdaContinua(diaBaja, mesBaja, añoBaja);
- 
+
   trFila.appendChild(tdAñoTotal);
   trFila.appendChild(tdMesTotal);
   trFila.appendChild(tdDiaTotal);
@@ -97,20 +111,3 @@ button.addEventListener("click", prevenirDefault);
 button.addEventListener("click", enviarDatos);
 const continua = document.querySelector("#continua");
 continua.addEventListener("click", continuidad);
-
-function continuidad(){
-    let diaBaja = document.querySelector("#diaBaja");
-    let mesBaja = document.querySelector("#mesBaja");
-    let añoBaja = document.querySelector("#añoBaja");
-  if (diaBaja.disabled && mesBaja.disabled && añoBaja.disabled) {
-    diaBaja.disabled = false;
-    mesBaja.disabled = false;
-    añoBaja.disabled = false;
-  }
-  else{
-    diaBaja.disabled = true;
-    mesBaja.disabled = true;
-    añoBaja.disabled = true;
-  }
-}
-
