@@ -34,7 +34,7 @@ function enviarDatos() {
       trFila.appendChild(tdAñoBaja);
     }
   }
-  
+
   let form = document.querySelector("form");
   let cargo = form.cargo.value;
   let hora = form.hora.value;
@@ -80,7 +80,7 @@ function enviarDatos() {
   tdDiaBaja.textContent = diaBaja;
   tdMesBaja.textContent = mesBaja;
   tdAñoBaja.textContent = añoBaja;
-  tdDiaTotal.textContent = calcularDias(fechaAlta, fechaBaja);
+  tdDiaTotal.textContent = calcularDias(fechaAlta);
   tdMesTotal.textContent = calcularMeses(fechaAlta, fechaBaja);
   tdAñoTotal.textContent = calcularYears(fechaAlta, fechaBaja);
   tdObservacion.textContent = rellenarObservacion(observacion);
