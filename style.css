@@ -1,5 +1,8 @@
+*{
+    box-sizing: border-box;
+}
+
 .main{
-    
     display: flex;
     flex-direction: column;
     width: 70%;
@@ -12,7 +15,7 @@
 /* Tabla */
 
 .main__tabla{
-    background-color: blanchedalmond;
+    background-color: #fff;
     border: 1px solid gray;
 }
 
@@ -21,19 +24,27 @@
     padding: 10px;
     text-align: center;
 }
+tr{
+    text-align: center;  
+}
+td{
+    border: 1px solid black;
+}
 
 /* Formulario */
 
 .main__form{
     margin-top: 100px;
-}
-.main__input{
-    width: 20%;
+    background-color: #dfe6e9;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 20px;
 }
 .main__form__label{
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
+    flex-direction: column;
 }
 .label--flex{
     display: flex;
@@ -41,18 +52,60 @@
     align-items: center;
     margin: 50px auto;
 }
-#cargo{
-    width: 60%;
+.form__h2{
+    font-size: 35px;
+    text-align: center;
 }
 .input__h3{
     text-align: center;
+    font-size: 28px;
 }
+/* Inputs */
+.main__input{
+    width: 97%;
+    margin-top: 5px;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.main__input:focus{
+    outline: none;
+}
+.main__div{
+    width: 20%;
+    background-color: #b2bec3;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+select{
+    width: 100%;
+    margin-top: 5px;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    appearance: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+select:focus{
+    outline:    ;
+}
+
 .container--h3{
     display: block;
 }
 .label--checkbox{
     display: block;
     text-align: center;
+    font-size: 30px;
+}
+.main__input--checkbox{
+    transform: scale(1.8);
 }
 .div--baja--visible{
     display: contents;
@@ -62,5 +115,19 @@
 }
 .main__input--button{
     display: block;
+    width: 15%;
     margin: auto;
+    padding: 15px;
+    border: #2d3436;
+    border-radius: 30px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #2d3436;
+    transition: all 100ms;
+}
+
+.main__input--button:hover{
+    font-size: 22px;
+    transition: all 500ms;
+    background-color: #00b894;
 }

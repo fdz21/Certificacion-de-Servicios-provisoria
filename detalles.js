@@ -7,6 +7,9 @@ function rellenarObservacion(observacion){
         observacion = "--------------------";
         return observacion;
     }
+    else {
+    return observacion
+    }
 }
 
 function codigoCargos(tdCargo){

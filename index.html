@@ -39,79 +39,99 @@
       </tbody>
     </table>
     <form class="main__form" action="">
-      <label for="cargo" class="main__form__label">
-        Cargo o Asignatura
-        <input type="text" name="cargo" id="cargo" class="main__input" placeholder="Ej: Profesor Matematica" />
-      </label>
-      <div class="label--flex">
-        <label for="hora">
-          Horas
-          <input type="text" name="hora" id="hora" class="main__input" placeholder="XX"/>
-        </label>
-        <label for="titularidad">
-          Titular o Suplente
-          <select name="titularidad" id="titularidad">
-            <option value="Titular">Titular</option>
-            <option value="Suplente">Suplente</option>
-          </select>
-        </label>
-        <label for="resolucion">
-          Curso
-          <select name="resolucion" id="resolucion">
-            <option value=""></option>
-            <option value="1A">1° A</option>
-            <option value="1B">1° B</option>
-            <option value="2A">2° A</option>
-            <option value="2B">2° B</option>
-            <option value="3A">3° A</option>
-            <option value="3B">3° B</option>
-            <option value="4A">4° A</option>
-            <option value="4B">4° B</option>
-            <option value="5A">5° A</option>
-            <option value="5B">5° B</option>
-            <option value="6A">6° A</option>
-            <option value="6B">6° B</option>
-          </select>
+      <h2 class="form__h2"> Datos de la persona</h2>
+      <div class="main__div"> <label for="cargo" class="main__form__label">
+          <span>Cargo o Asignatura</span>
+          <input type="text" name="cargo" id="cargo" class="main__input" placeholder="Ej: Profesor Matematica"  maxlength="35"/>
         </label>
       </div>
-      <label for="observacion" class="main__form__label">
-        Observaciones
-        <input type="text" name="observacion" id="observacion" class="main__input" />
-      </label>
-        <h3 class="input__h3">Fecha de Alta</h3>
-        <div class="label--flex">
-        <label for="diaAlta">
-          Dia
-          <input type="text" name="diaAlta" id="diaAlta" class="main__input" placeholder="DD"/>
-        </label>
-        <label for="mesAlta">
-          Mes
-          <input type="text" name="mesAlta" id="mesAlta" class="main__input" placeholder="MM"/>
-        </label>
-        <label for="añoAlta">
-          Año
-          <input type="text" name="añoAlta" id="añoAlta" class="main__input" placeholder="AAAA" />
-        </label>
-      </div>        
-      <label for="continua" class="label--checkbox">
-          Marcar si continua
-          <input type="checkbox" name="continua" id="continua" class="main__input--checkbox" />
-        </label>
-        <h3 id="h3" class="input__h3">Fecha de Baja</h3>
       <div class="label--flex">
-        <div id="baja"  class="div--baja--visible">
-          <label for="diaBaja">
+        <div class="main__div">
+          <label for="hora" class="main__form__label">
+            Horas
+            <input type="text" name="hora" id="hora" class="main__input" placeholder="XX" maxlength="2"/>
+          </label>
+        </div>
+        <div class="main__div">
+          <label for="titularidad" class="main__form__label">
+            Titular o Suplente
+            <select name="titularidad" id="titularidad">
+              <option value="Titular">Titular</option>
+              <option value="Suplente">Suplente</option>
+            </select>
+          </label>
+        </div>
+        <div class="main__div">
+          <label for="resolucion" class="main__form__label">
+            Curso
+            <select name="resolucion" id="resolucion">
+              <option value=""></option>
+              <option value="1A">1° A</option>
+              <option value="1B">1° B</option>
+              <option value="2A">2° A</option>
+              <option value="2B">2° B</option>
+              <option value="3A">3° A</option>
+              <option value="3B">3° B</option>
+              <option value="4A">4° A</option>
+              <option value="4B">4° B</option>
+              <option value="5A">5° A</option>
+              <option value="5B">5° B</option>
+              <option value="6A">6° A</option>
+              <option value="6B">6° B</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="main__div"><label for="observacion" class="main__form__label">
+          Observaciones
+          <input type="text" name="observacion" id="observacion" class="main__input" />
+        </label></div>
+
+      <h3 class="input__h3">Fecha de Alta</h3>
+      <div class="label--flex">
+        <div class="main__div">
+          <label for="diaAlta" class="main__form__label">
             Dia
-            <input type="text" name="dia2" id="diaBaja" class="main__input" placeholder="DD" />
+            <input type="text" name="diaAlta" id="diaAlta" class="main__input" placeholder="DD" maxlength="2"/>
           </label>
-          <label for="mesBaja">
+        </div>
+        <div class="main__div">
+          <label for="mesAlta" class="main__form__label">
             Mes
-            <input type="text" name="mes2" id="mesBaja" class="main__input" placeholder="MM" />
+            <input type="text" name="mesAlta" id="mesAlta" class="main__input" placeholder="MM" maxlength="2" />
           </label>
-          <label for="añoBaja">
+        </div>
+        <div class="main__div">
+          <label for="añoAlta" class="main__form__label">
             Año
-            <input type="text" name="año2" id="añoBaja" class="main__input" placeholder="AAAA"/>
+            <input type="text" name="añoAlta" id="añoAlta" class="main__input" placeholder="AAAA" maxlength="4"/>
           </label>
+        </div>
+      </div>
+      <label for="continua" class="label--checkbox">
+        Marcar si continua
+        <input type="checkbox" name="continua" id="continua" class="main__input--checkbox"/>
+      </label>
+      <h3 id="h3" class="input__h3">Fecha de Baja</h3>
+      <div class="label--flex">
+        <div id="baja" class="div--baja--visible">
+          <div class="main__div">
+            <label for="diaBaja" class="main__form__label">
+              Dia
+              <input type="text" name="dia2" id="diaBaja" class="main__input" placeholder="DD" maxlength="2"/>
+            </label>
+          </div>
+          <div class="main__div">
+            <label for="mesBaja" class="main__form__label">
+              Mes
+              <input type="text" name="mes2" id="mesBaja" class="main__input" placeholder="MM" maxlength="2"/>
+            </label>
+          </div>
+          <div class="main__div"> <label for="añoBaja" class="main__form__label">
+              Año
+              <input type="text" name="año2" id="añoBaja" class="main__input" placeholder="AAAA" maxlength="4" />
+            </label>
+          </div>
         </div>
       </div>
       <input id="button" type="submit" class="main__input--button"></button>

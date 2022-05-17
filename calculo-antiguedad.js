@@ -41,7 +41,7 @@ function calcularDiasHoy(fechaAlta) {
     years--;
     meses = 12 + meses;
   }
-  return dias - 1;
+  return dias;
 }
 
 function calcularMeses(fechaAlta, fechaBaja) {
